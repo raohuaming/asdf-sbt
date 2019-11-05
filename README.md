@@ -3,7 +3,7 @@
 This is SBT plugin for asdf version manager. Install script was adapted from https://github.com/lerencao/asdf-sbt
 
 ``` shell
-asdf plugin-add sbt https://github.com/bram200/asdf-sbt
+asdf plugin-add sbt
 asdf list-all sbt
 asdf install sbt 1.1.1
 ```
