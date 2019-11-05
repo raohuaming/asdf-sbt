@@ -1,9 +1,9 @@
-# asdf-sbt [![Build Status](https://travis-ci.org/gabrielelana/asdf-sbt.svg?branch=master)](https://travis-ci.org/gabrielelana/asdf-sbt)
+# asdf-sbt [![Build Status](https://travis-ci.org/bram2000/asdf-sbt.svg?branch=master)](https://travis-ci.org/bram2000/asdf-sbt)
 
 This is SBT plugin for asdf version manager. Install script was adapted from https://github.com/lerencao/asdf-sbt
 
 ``` shell
-asdf plugin-add sbt https://github.com/gabrielelana/asdf-sbt
+asdf plugin-add sbt https://github.com/bram200/asdf-sbt
 asdf list-all sbt
 asdf install sbt 1.1.1
 ```
