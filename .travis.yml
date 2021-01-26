@@ -7,7 +7,7 @@ script:
   - asdf install sbt $LATEST_VERSION
   - asdf global sbt $LATEST_VERSION
   - asdf current sbt
-  - test `asdf current sbt | cut -d' ' -f1` = $LATEST_VERSION
+  - test `asdf current sbt | cut -d' ' -f14` = $LATEST_VERSION
   - asdf plugin-test sbt https://github.com/bram2000/asdf-sbt.git
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
