@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-releases_path=https://api.github.com/repos/sbt/sbt/releases
-cmd="curl -s"
-if [ -n "$OAUTH_TOKEN" ]; then
-  cmd="$cmd -H 'Authorization: token $OAUTH_TOKEN'"
-fi
-cmd="$cmd $releases_path"
+releases_path=https://www.scala-sbt.org/download.html
+cmd="curl -s $releases_path"
 
 sort_cmd='sort'
 if sort --help | grep -q -- '-V'; then
@@ -13,5 +9,5 @@ if sort --help | grep -q -- '-V'; then
 fi
 
 # Fetch all releases that have a tgz asset available (some tags are archived and unavailable)
-versions=$(eval $cmd | grep '"name": "sbt.*\.tgz",$' | sed 's/[^-]*-\(.*\).tgz",/\1/' | $sort_cmd | uniq)
-echo $versions
+versions=$(eval $cmd | grep -E -i 'releases\/download\/v\d+\.\d+\.\d+\/' | awk -F'download/' '{print $2}' | awk -F'/sbt' '{print $1}' | $sort_cmd | uniq)
+echo "$versions"
